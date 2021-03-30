@@ -17,7 +17,7 @@ pipeline {
             }
             steps { 
                 withSonarQubeEnv('SONAR_LOCAL') {
-                    sh "${scannerHome}/bin/sonar-scanner -e -Dsonar.projectKey=demo -Dsonar.host.url=http://localhost:9000 -Dsonar.login=raphael"
+                    sh "${scannerHome}/bin/sonar-scanner -e -Dsonar.projectKey=demo -Dsonar.host.url=http://localhost:9000 -Dsonar.login=dd362fd30c624f009d76cdec5b9bdc3806fe6c59"
                 }
             }
         }                                            
