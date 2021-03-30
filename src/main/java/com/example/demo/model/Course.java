@@ -1,12 +1,12 @@
 package com.example.demo.model;
 
-import org.springframework.web.multipart.MultipartFile;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
-//@Table(schema = "RAPHAEL")
 public class Course {
 
     @Id
@@ -14,21 +14,16 @@ public class Course {
     private Long id;
     private String username;
     private String description;
-
     private String filePath;
-
-    @Transient
-    private MultipartFile file;
 
     public Course() {
     }
 
-    public Course(Long id, String username, String description, String filePath, MultipartFile file) {
+    public Course(Long id, String username, String description, String filePath) {
         this.id = id;
         this.username = username;
         this.description = description;
         this.filePath = filePath;
-        this.file = file;
     }
 
     public Long getId() {
@@ -63,13 +58,6 @@ public class Course {
         this.filePath = filePath;
     }
 
-    public MultipartFile getFile() {
-        return file;
-    }
-
-    public void setFile(MultipartFile file) {
-        this.file = file;
-    }
 
     @Override
     public String toString() {

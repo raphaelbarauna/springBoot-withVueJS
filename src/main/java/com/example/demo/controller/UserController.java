@@ -18,14 +18,14 @@ public class UserController {
     UserRepository userRepository;
 
     @GetMapping("/")
-    private ResponseEntity<List<User>> getAllUser(){
+    public ResponseEntity<List<User>> getAllUser(){
 
         List<User> users = userRepository.findAll();
         return new ResponseEntity<>(users , HttpStatus.OK);
     }
 
     @PostMapping("/save")
-    private ResponseEntity<User> saveUser(@RequestParam String name, @RequestParam String email, @RequestParam String password){
+    public ResponseEntity<User> saveUser(@RequestParam String name, @RequestParam String email, @RequestParam String password){
 
         User user = new User(name, email, password);
         userRepository.save(user);

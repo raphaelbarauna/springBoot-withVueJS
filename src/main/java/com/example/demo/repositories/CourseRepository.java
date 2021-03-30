@@ -10,10 +10,11 @@ import java.util.Optional;
 @Repository
 public interface CourseRepository extends JpaRepository<Course, Integer> {
 
-
     void deleteCourseById(Long id);
 
     Optional<Course> findCourseById(Long id);
 
     List<Course> findByUsername(String userName);
+
+    List<Course> findByusernameAndDescription(String userName, String description);
 }
